@@ -1,0 +1,65 @@
+/*
+ * Base Styles
+ *
+ */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.board {
+    display: flex;
+    justify-content: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.square {
+    height: 50px;
+    width: 50px;
+    border: 1px solid grey;
+    margin: 2px;
+    background-color: lightgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reset-button {
+    margin-top: 25px;
+}
+
+/*
+ * Conditional Styles
+ *
+ */
+
+.square.covered:hover,
+.reset-button:hover {
+    cursor: pointer;
+}
+
+.square.covered span:before {
+    content: "\01F62C";
+    display: none;
+}
+
+.square.covered:hover span:before {
+    display: block;
+}
+
+.square.safe.uncovered {
+    background-color: lightgreen;
+}
+
+.square.bomb.uncovered {
+    background-color: pink;
+}
+
+.square.bomb.uncovered:before {
+    content: "\01F4A3";
+}
