@@ -1,10 +1,12 @@
-$(".square.covered").click(function(event) {
+$(".board .square.covered").click(function(event) {
     var square = $(event.currentTarget);
     square.removeClass("covered");
     square.addClass("uncovered");
-    
+
     if (square.hasClass("bomb")) {
-      alert("GAME OVER");
+        $(".square").removeClass("uncovered");
+        $(".square").addClass("covered");
+        alert("GAME OVER");
     }
 });
 
